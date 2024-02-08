@@ -1,0 +1,66 @@
+“person” class to hold all the details:
+class Person {
+  constructor(name, age, gender, city) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.city = city;
+  }
+
+  introduce() {
+    console.log(`Hello, I am ${this.name} from ${this.city}. I am ${this.age} years old and I identify as ${this.gender}.`);
+  }
+
+  getBirthYear() {
+    return new Date().getFullYear() - this.age;
+  }
+}
+
+const john = new Person('Aaru', 25, 'male', 'New York');
+john.introduce();
+console.log(`Aaru was born in ${john.getBirthYear()}.`);
+
+Uber price:
+
+class UberPriceCalculator {
+  constructor(basePrice, distanceRate, timeRate) {
+    this.basePrice = basePrice;
+    this.distanceRate = distanceRate;
+    this.timeRate = timeRate;
+  }
+
+  calculatePrice(distance, time) {
+    const distanceCost = distance * this.distanceRate;
+    const timeCost = time * this.timeRate;
+    const totalCost = this.basePrice + distanceCost + timeCost;
+    return totalCost;
+  }
+}
+
+const uberPriceCalculator = new UberPriceCalculator(2.5, 1.5, 0.5);
+const distance = 5; // in miles
+const time = 10; // in minutes
+const price = uberPriceCalculator.calculatePrice(distance, time);
+console.log(`The Uber price is $${price.toFixed(2)} for a ${distance} mile ride and ${time} minutes of waiting time.`);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
